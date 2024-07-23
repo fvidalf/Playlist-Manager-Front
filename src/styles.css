@@ -1,39 +1,35 @@
 body {
+    font-size: small;
     display: flex;
-    flex-direction: column; /* Cambia la dirección del flex a columna */
-    justify-content: center; /* Centra el contenido verticalmente */
-    align-items: center; /* Centra el contenido horizontalmente */
-    height: 100vh;
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center; 
+    height: 50vh;
     background-color: #ffffff;
 }
 
-.button-container {
-    margin-top: auto; /* Empuja el contenedor del botón hacia abajo */
-}
-
 h1 {
-    color: #000000;
+    color: #191414;
     text-align: center;
     font-family: 'Forum', sans-serif;
-    margin: 0; /* Asegúrate de que el margen del h1 no afecte el centrado */
+    margin: 0; 
 }
 
-button {
+.spoti-button {
     font-family: 'Forum', sans-serif;
+    font-size: 20px; 
     background-color: #1DB954; 
     color: #ffffff; 
-    padding: 10px 400px; 
+    padding: 15px 100px; 
     border: none; 
     border-radius: 70px; 
     cursor: pointer; 
-    font-size: 20px; 
+    display: block;
+    margin: auto;
+    margin-top: 50px;
     /* NO ENCUENTRO UNA PUTA IMAGEN PNG DE SPOTIFY PARA EL BOTON ME CAGO EN TODO */
-    background-image: url('img/spotify.png');
-    background-position: left;
-    background-repeat: no-repeat;
-    background-size: 20px;
 }
 
 button:hover {
-    background-color: #191414;
+    background-color: #282828;
 }
