@@ -1,18 +1,21 @@
-import { Route, Routes } from 'react-router-dom'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import Login from './views/Login'
 import Playlists from './views/Playlists'
+import { AuthProvider } from './context/AuthProvider.jsx'
+import AuthOnlyRoute from './context/AuthOnlyRoute.jsx'
+import PublicOnlyRoute from './context/PublicOnlyRoute.jsx'
 
 const App = () => {
 
   return (
-    <>
+    <AuthProvider>
       <Routes>
-        <Route path="/" element={<Playlists/>}/>
-        <Route path="/login" element={<Login/>}/>
-        <Route path="/callback" element={<Login/>}/>
-        <Route path="/playlists" element={<Playlists/>}/>
+        <Route path="/login" element={<PublicOnlyRoute><Login/></PublicOnlyRoute>}/>
+        <Route path="/callback" element={<PublicOnlyRoute><Login/></PublicOnlyRoute>}/>
+        <Route path="/" element={<AuthOnlyRoute><Playlists/></AuthOnlyRoute>}/>
+        <Route path="/playlists" element={<AuthOnlyRoute><Playlists/></AuthOnlyRoute>}/>
       </Routes>
-    </>
+    </AuthProvider>
   )
 }
 
