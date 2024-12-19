@@ -4,16 +4,24 @@ body {
     flex-direction: column; 
     justify-content: center; 
     align-items: center; 
-    height: 50vh;
-    background-color: #ffffff;
+    /* height: 50vh;
+    background-color: #ffffff; */
 }
 
-h1 {
+/* Set color variables */
+:root {
+    --background-white: #fcf7f8;
+    --highlight-green: #c4ff00;
+    --secondary-color: #1DB954;
+    --tertiary-color: #ffffff;
+}
+
+/* h1 {
     color: #191414;
     text-align: center;
     font-family: 'Forum', sans-serif;
     margin: 0; 
-}
+} */
 
 .spotify-login-button {
     font-family: 'Forum', sans-serif;
@@ -32,4 +40,52 @@ h1 {
 
 button:hover {
     background-color: #282828;
+}
+
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(3,  1fr);
+    gap: 30px;
+}
+
+.playlist-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding-left: 15px;
+    padding-top: 15px;
+    padding-right: 20px;
+    padding-bottom: 20px;
+    border: #000000 solid 2px;
+    width: 260px;
+}
+
+.bold-photo {
+    width: 260px;
+    height: 260px;
+    border: #000000 solid 2px;
+    box-shadow: 5px 5px 0px rgba(0, 0, 0, 1); /* Adjust the offset and color as needed */
+}
+
+.card-buttons {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.highlight-button {
+    border: #000000 solid 2px;
+    background-color: var(--highlight-green);
+    border-radius: 0;
+    color: #000000;
+    box-shadow: 5px 5px 0px rgba(0, 0, 0, 1);
+}
+
+.card-text {
+    text-align: justify;
+    width: 100%;
 }
