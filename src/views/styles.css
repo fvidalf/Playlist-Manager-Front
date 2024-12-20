@@ -1,19 +1,21 @@
-body {
-    font-size: small;
-    display: flex;
-    flex-direction: column; 
-    justify-content: center; 
-    align-items: center; 
-    /* height: 50vh;
-    background-color: #ffffff; */
-}
-
 /* Set color variables */
 :root {
-    --background-white: #fcf7f8;
+    --background-pink: #ffd7fb;
     --highlight-green: #c4ff00;
     --secondary-color: #1DB954;
-    --tertiary-color: #ffffff;
+    --plain-white: #ffffff;
+}
+
+#root {
+    width: 100vw;
+    font-family: "Poppins", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+body {
+    background-color: var(--background-pink);
+    font-size: small;
 }
 
 /* h1 {
@@ -46,6 +48,7 @@ button:hover {
     display: grid;
     grid-template-columns: repeat(3,  1fr);
     gap: 30px;
+    margin-top: 100px;
 }
 
 .playlist-card {
@@ -70,6 +73,11 @@ button:hover {
     box-shadow: 5px 5px 0px rgba(0, 0, 0, 1); /* Adjust the offset and color as needed */
 }
 
+.card-text {
+    text-align: justify;
+    width: 100%;
+}
+
 .card-buttons {
     display: flex;
     justify-content: space-between;
@@ -86,6 +94,51 @@ button:hover {
 }
 
 .card-text {
-    text-align: justify;
     width: 100%;
+    height: 125px;
+    overflow: hidden;
+}
+
+.card-text h3 {
+    font-size: large;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    margin: 10px 0;
+}
+
+.card-text p {
+    text-align: justify;
+    font-size: small;
+    margin: 0;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3; /* Number of lines before ellipsis */
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+nav {
+    display: flex;
+    justify-content: start;
+    width: 100%;
+    position: fixed;
+    background-color: var(--plain-white);
+    top: 0;
+    left: 0;
+    border-bottom: #000000 solid 2px;
+}
+
+nav .navbar-item {
+    padding: 10px 20px;
+    font-size: large;
+    border-right: #000000 solid 2px;
+
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
