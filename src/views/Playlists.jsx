@@ -26,7 +26,6 @@ const Playlists = () => {
 
   return (
     <>
-      <h1> Playlists </h1>
       <div className="card-container">
         {playlists.map((playlist, index) => (
           <div key={playlist.id} className="playlist-card">
