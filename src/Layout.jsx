@@ -3,9 +3,9 @@ import Navbar from './views/Navbar';
 
 const Layout = ({ children }) => {
   return (
-    <div>
+    <div style={{ height: '100%' }}>
       <Navbar />
-      <main style={{ paddingTop: '3rem' }}>{children}</main>
+      <main>{children}</main>
     </div>
   );
 };

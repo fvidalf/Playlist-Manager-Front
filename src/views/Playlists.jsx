@@ -42,11 +42,11 @@ const Playlists = () => {
   }, [playlists, total]);
 
   return (
-    <>
+    <div id="playlists-container">
       <div className="card-container">
         {playlists.map((playlist, index) => {
           return (
-            <div ref={index === playlists.length - 1 ? lastPlaylistElementRef : null} key={playlist.id} className="playlist-card">
+            <div ref={index === playlists.length - 1 ? lastPlaylistElementRef : null} key={playlist.id} className="card playlist-card">
               <img className="bold-photo" src={playlist.images[0].url} alt={playlist.name}/>
               <div className="card-text">
                 <h3>{playlist.name}</h3>
@@ -60,7 +60,7 @@ const Playlists = () => {
           );
         })}
       </div>
-    </>
+    </div>
   );
 };
 

@@ -16,7 +16,6 @@ const Login = () => {
     const code = urlParams.get("code");
 
     if (code) {
-      // sessionStorage.setItem("processedCode", "true");
       const callbackParams = new URLSearchParams({ code });
 
       axios.get(`${apiConfig.API_URL}/callback`, {
@@ -32,14 +31,12 @@ const Login = () => {
       })
       .catch(error => {
         console.error("Error:", error);
-        // sessionStorage.removeItem("processedCode");
       });
     }
   }, [location, navigate]);
 
   const handleLogin = async (event) => {
     event.preventDefault();
-    // sessionStorage.removeItem("processedCode");
     axios.get(`${apiConfig.API_URL}/login`)
       .then(response => {
         window.location.href = response.data.authUrl
@@ -49,8 +46,23 @@ const Login = () => {
 
   return (
     <>
-      <h1> Bienvenido a Playlist Manager, inicie sesión para continuar </h1>
-      <button className="spotify-login-button" onClick={handleLogin}>Log In con Spotify</button>
+      <div id="login-container">
+        <div className="card" id="login-hero">
+          <div id="login-hero-text">
+            <h1>Welcome to your Playlist Manager</h1>
+            <h2>A tool to split, blend and enhance your playlists</h2>
+          </div>
+          <button id="hero-button" className="highlight-button" onClick={handleLogin}>Login with Spotify</button>
+        </div>
+        <div id="login-content">
+          <div className="card" id="features-card">
+            <h2>¿Qué puedes hacer con Playlist Manager?</h2>
+          </div>
+          <div className="card" id="footer">
+            <p>Hecho por <a href="">@fvidalf</a> & <a href="">@DiegoUDP</a></p>
+          </div>
+        </div>
+      </div>
     </>
   )
 }

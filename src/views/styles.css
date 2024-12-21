@@ -2,11 +2,13 @@
 :root {
     --background-pink: #ffd7fb;
     --highlight-green: #c4ff00;
-    --secondary-color: #1DB954;
+    --background-blue: #bae4ff;
+    --background-green: #8af790;
     --plain-white: #ffffff;
 }
 
 #root {
+    height: 100vh;
     width: 100vw;
     font-family: "Poppins", serif;
     font-weight: 400;
@@ -18,18 +20,22 @@ body {
     font-size: small;
 }
 
-.spotify-login-button {
-    font-family: 'Forum', sans-serif;
-    font-size: 20px; 
-    background-color: #1DB954; 
-    color: #ffffff; 
-    padding: 15px 100px; 
-    border: none; 
-    border-radius: 70px; 
+h1 {
+    font-size: xxx-large;
+    font-weight: 700;
+}
+
+h2 {
+    font-size: x-large;
+    font-weight: 400;
+}
+
+#hero-button {
+    border-width: 0.1em;
+    font-size: x-large;
     cursor: pointer; 
     display: block;
-    margin: auto;
-    margin-top: 50px;
+    align-self: flex-end;
     /* NO ENCUENTRO UNA PUTA IMAGEN PNG DE SPOTIFY PARA EL BOTON ME CAGO EN TODO */
 }
 
@@ -44,18 +50,21 @@ button:hover {
     margin: 30px;
 }
 
-.playlist-card {
+.card {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: #ffffff;
     border-radius: 10px;
+    border: #000000 solid 2px;
+}
+
+.playlist-card {
+    background-color: #ffffff;
     padding-left: 15px;
     padding-top: 15px;
     padding-right: 20px;
     padding-bottom: 20px;
-    border: #000000 solid 2px;
     width: 260px;
 }
 
@@ -79,7 +88,9 @@ button:hover {
 }
 
 .highlight-button {
-    border: #000000 solid 2px;
+    font-weight: 400;
+    padding: 0.4em 0.8em;
+    border: #000000 solid 0.15em;
     background-color: var(--highlight-green);
     border-radius: 0;
     color: #000000;
@@ -130,8 +141,57 @@ nav .navbar-item {
 }
 
 main {
+    padding-top: 3rem;
+    height: calc(100vh - 3rem);
+}
+
+#playlists-container {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+}
+
+#login-container {
+    display: flex;
+    text-align: left;
+    height: calc(100% - 60px);
+    margin: 30px;
+}
+
+#login-hero {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px;
+    width: 60%;
+    margin-right: 30px;
+}
+
+#login-hero-text {
+    align-self: flex-start;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+#login-hero h1 {
+    margin-bottom: 0;
+}
+
+#login-content {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+}
+
+#features-card {
+    background-color: var(--background-blue);
+    height: 85%;
+    margin-bottom: 30px;
+}
+
+#footer {
+    background-color: var(--background-green);
+    height: 15%;
 }
