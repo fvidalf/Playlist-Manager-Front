@@ -1,11 +1,11 @@
 import React from 'react';
-import Navbar from './views/Navbar';
+import Navbar from './views/navbar/Navbar';
 
 const Layout = ({ children }) => {
   return (
-    <div>
+    <div style={{ height: '100%' }}>
       <Navbar />
-      <main style={{ paddingTop: '3rem' }}>{children}</main>
+      <main>{children}</main>
     </div>
   );
 };
