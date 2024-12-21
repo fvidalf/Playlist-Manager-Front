@@ -1,9 +1,9 @@
-import "./styles.css"
+import "./login.css"
 import React, { useEffect } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
-import { useAuth } from '../context/AuthProvider';
+import { useAuth } from '../../context/AuthProvider';
 import axios from "axios";
-import { apiConfig } from "../config";
+import { apiConfig } from "../../config";
 
 const Login = () => {
 
@@ -56,10 +56,10 @@ const Login = () => {
         </div>
         <div id="login-content">
           <div className="card" id="features-card">
-            <h2>¿Qué puedes hacer con Playlist Manager?</h2>
+            <h2>What can you do with this tool?</h2>
           </div>
           <div className="card" id="footer">
-            <p>Hecho por <a href="">@fvidalf</a> & <a href="">@DiegoUDP</a></p>
+            <h2>Hecho por <a href="">@fvidalf</a> & <a href="">@DiegoUDP</a></h2>
           </div>
         </div>
       </div>

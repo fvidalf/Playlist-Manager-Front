@@ -1,7 +1,7 @@
-import "./styles.css"
+import "./playlists.css"
 import React, { useEffect, useState, useRef, useCallback } from 'react';
 import axios from "axios";
-import { apiConfig } from "../config";
+import { apiConfig } from "../../config";
 
 
 const Playlists = () => {

@@ -1,0 +1,22 @@
+#playlists-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.playlist-card {
+    background-color: #ffffff;
+    padding-left: 15px;
+    padding-top: 15px;
+    padding-right: 20px;
+    padding-bottom: 20px;
+    width: 260px;
+}
+
+.bold-photo {
+    width: 260px;
+    height: 260px;
+    border: #000000 solid 2px;
+    box-shadow: 5px 5px 0px rgba(0, 0, 0, 1); /* Adjust the offset and color as needed */
+}
