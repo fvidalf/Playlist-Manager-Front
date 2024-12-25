@@ -106,23 +106,35 @@ button:focus-visible {
   display: flex;
   justify-content: space-between;
   width: 100%;
+  height: 3em;
   margin-top: 10px;
+  align-items: flex-end;
 }
 
 .highlight-button {
+  height: 2.8em;
   font-weight: 400;
   padding: 0.4em 0.8em;
   border: #000000 solid 0.15em;
   background-color: var(--highlight-green);
   border-radius: 0;
   color: #000000;
-  box-shadow: 5px 5px 0px rgba(0, 0, 0, 1);
+  box-shadow: 2px 2px 0px rgba(0, 0, 0, 1);
+  transition: background-color 0.2s, box-shadow 0.2s, color 0.2s, font-size 0.2s, border 0.2s;
+}
+
+.highlight-button:hover {
+  background-color: #ff00dd; 
+  border-color: #000000; 
+  color: var(--plain-white);
+  font-size: medium;
+  box-shadow: 4px 4px 0px rgba(0, 0, 0, 1);
+  border: #000000 solid 0.15em;
 }
 
 .card-text {
   text-align: justify;
   width: 100%;
-  height: 8em;
   overflow: hidden;
 }
 
@@ -141,8 +153,6 @@ button:focus-visible {
   margin: 0;
   margin-bottom: 10px;
   display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 3; /* Number of lines before ellipsis */
   overflow: hidden;
   text-overflow: ellipsis;
 }
