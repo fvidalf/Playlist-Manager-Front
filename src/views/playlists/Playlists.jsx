@@ -9,6 +9,7 @@ const Playlists = () => {
   const [playlists, setPlaylists] = useState([]);
   const [page, setPage] = useState(1);
   const [total, setTotal] = useState(0);
+  const [infoBoxVisible, setInfoBoxVisible] = useState(true);
   const observer = useRef();
 
   useEffect(() => {
@@ -24,6 +25,7 @@ const Playlists = () => {
       setPlaylists(prevPlaylists => [...prevPlaylists, ...response.data.items]);
       setTotal(response.data.total);
     });
+    console.log(playlists);
   };
 
   const handleSpotify = (reference) => {
@@ -43,18 +45,26 @@ const Playlists = () => {
 
   return (
     <div id="playlists-container">
-      <div className="card-container">
+      <div className={`info-box card ${infoBoxVisible ? "" : "info-box-invisible"}`} >
+        <div className="header-button-container">
+          <span className="material-symbols-outlined close-button" onClick={() => setInfoBoxVisible(false)}>close</span>
+        </div>
+        <div className="info-content">
+          <p>These are your playlists. Scroll down to see more.</p>
+          <p>Click on <strong>See playlist</strong> to start managing your playlist.</p>
+        </div>
+      </div>
+      <div className="playlist-card-container">
         {playlists.map((playlist, index) => {
           return (
             <div ref={index === playlists.length - 1 ? lastPlaylistElementRef : null} key={playlist.id} className="card playlist-card">
               <img className="bold-photo" src={playlist.images[0].url} alt={playlist.name}/>
               <div className="card-text">
                 <h3>{playlist.name}</h3>
-                <p>{playlist.description}</p>
+                <p>by {playlist.owner.display_name} - {playlist.tracks.total} tracks</p>
               </div>
               <div className="card-buttons">
                 <button className="highlight-button" onClick={() => console.log("See playlist")}>See playlist</button>
-                <button className="highlight-button" onClick={() => handleSpotify(playlist.external_urls.spotify)}>Open in Spotify</button>
               </div>
             </div>
           );
