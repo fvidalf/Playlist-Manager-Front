@@ -1,11 +1,12 @@
 import "./playlists.css"
+import { useNavigate } from "react-router-dom";
 import React, { useEffect, useState, useRef, useCallback } from 'react';
 import axios from "axios";
 import { apiConfig } from "../../config";
 
 
 const Playlists = () => {
-
+  const navigate = useNavigate();
   const [playlists, setPlaylists] = useState([]);
   const [page, setPage] = useState(1);
   const [total, setTotal] = useState(0);
@@ -28,9 +29,10 @@ const Playlists = () => {
     console.log(playlists);
   };
 
-  const handleSpotify = (reference) => {
-    console.log("Open in Spotify");
-    window.open(reference, "_blank");
+  const handleSeePlaylist = (index) => {
+    const id = playlists[index].id;
+    console.log("See playlist", id);
+    navigate(`/playlists/${id}`);
   };
 
   const lastPlaylistElementRef = useCallback(node => {
@@ -64,7 +66,7 @@ const Playlists = () => {
                 <p>by {playlist.owner.display_name} - {playlist.tracks.total} tracks</p>
               </div>
               <div className="card-buttons">
-                <button className="highlight-button" onClick={() => console.log("See playlist")}>See playlist</button>
+                <button className="highlight-button" onClick={() => handleSeePlaylist(index)}>See playlist</button>
               </div>
             </div>
           );

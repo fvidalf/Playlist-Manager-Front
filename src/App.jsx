@@ -6,6 +6,7 @@ import Layout from './Layout.jsx'
 import { AuthProvider } from './context/AuthProvider.jsx'
 import AuthOnlyRoute from './context/AuthOnlyRoute.jsx'
 import PublicOnlyRoute from './context/PublicOnlyRoute.jsx'
+import PlaylistDetails from './views/playlistDetails/PlaylistDetails.jsx';
 
 const App = () => {
 
@@ -17,6 +18,7 @@ const App = () => {
           <Route path="/callback" element={<PublicOnlyRoute><Login/></PublicOnlyRoute>}/>
           <Route path="/" element={<AuthOnlyRoute><Playlists/></AuthOnlyRoute>}/>
           <Route path="/playlists" element={<AuthOnlyRoute><Playlists/></AuthOnlyRoute>}/>
+          <Route path="/playlists/:id" element={<AuthOnlyRoute><PlaylistDetails/></AuthOnlyRoute>}/>
         </Routes>
       </Layout>
     </AuthProvider>
